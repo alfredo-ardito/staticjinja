@@ -16,7 +16,7 @@ class MarkdownExtension(Extension):
     def __init__(self, environment):
         super(MarkdownExtension, self).__init__(environment)
         environment.extend(
-            markdown_dir = _markdowns
+            markdown_dir = _markdown_dir
         )
 
     def parse(self, parser):
