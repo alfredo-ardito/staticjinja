@@ -8,6 +8,7 @@ from jinja2.nodes import Const
 from markdown2 import Markdown
 
 _searchpath = 'templates'
+_outpath = '.'
 _markdown_dir = f'{_searchpath}/markdowns' 
 
 class MarkdownExtension(Extension):
@@ -40,6 +41,7 @@ class MarkdownExtension(Extension):
 if __name__ == "__main__":
     site = Site.make_site(
         searchpath = _searchpath,
+        outpath = _outpath,
         extensions=[MarkdownExtension],)
     # enable automatic reloading
     site.render(use_reloader=True)
