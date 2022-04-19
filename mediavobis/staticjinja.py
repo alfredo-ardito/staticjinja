@@ -258,6 +258,8 @@ class Site:
         environment = Environment(**env_kwargs)
         # NEW -> add extension here.
         environment.add_extension(MarkdownExtension) 
+        # NEW -> add other extension here.
+        #environment.add_extension(OtherExtension) 
         # NEW -> set markdowns_dir here.
         environment.markdown_dir = f'{searchpath}/{environment.markdown_dir}' if environment.markdown_dir else searchpath 
         environment.filters.update(filters)
