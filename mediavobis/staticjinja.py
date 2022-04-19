@@ -16,6 +16,8 @@ from jinja2 import Environment, FileSystemLoader
 
 from .reloader import Reloader
 
+from .markdown_extension import MarkdownExtension
+
 logger = logging.getLogger(__name__)
 
 
@@ -254,7 +256,7 @@ class Site:
         )
         env_kwargs.setdefault("extensions", extensions or [])
         environment = Environment(**env_kwargs)
-        environment.add_extension(MarkdownExtension) # new add extension here
+        environment.add_extension(MarkdownExtension) # new add extension here.
         environment.filters.update(filters)
         environment.globals.update(env_globals)
 
