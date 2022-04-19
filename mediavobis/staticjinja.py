@@ -256,7 +256,10 @@ class Site:
         )
         env_kwargs.setdefault("extensions", extensions or [])
         environment = Environment(**env_kwargs)
-        environment.add_extension(MarkdownExtension) # new add extension here.
+        # NEW -> add extension here.
+        environment.add_extension(MarkdownExtension) 
+        # NEW -> set markdowns_dir here.
+        environment.markdown_dir = f'{searchpath}/{environment.markdown_dir}' if environment.markdown_dir else searchpath 
         environment.filters.update(filters)
         environment.globals.update(env_globals)
 
