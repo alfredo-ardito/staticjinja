@@ -10,6 +10,7 @@ from markdown2 import Markdown
 from pathlib import Path
 
 _searchpath = 'templates'
+_outpath = '.'
 _markdown_dir = f'{_searchpath}/markdowns' 
 
 class MarkdownExtension(Extension):
@@ -33,7 +34,6 @@ class MarkdownExtension(Extension):
 
     def _to_html(self, md_file, caller):
         if len(md_file):
-            print(self.environment.markdown_dir)
             with codecs.open('{}/{}'.format(self.environment.markdown_dir, md_file), 'r', encoding='utf-8') as f:
                 return Markdown().convert(f.read())
         else:
@@ -84,9 +84,8 @@ if __name__ == "__main__":
 
     site = MySite.make_site(
         searchpath = _searchpath,
+        outpath = _outpath,
         extensions=[MarkdownExtension],)
-
-
     # enable automatic reloading
     site.render(use_reloader=True)
     #site.render(use_reloader=False)
