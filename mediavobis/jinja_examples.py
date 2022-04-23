@@ -1,28 +1,31 @@
 ############################### example 1
 
+import os
 from jinja2 import Environment, FileSystemLoader
 content = 'This is about page'
 mystring = "{% extends '_base.html' %}{% block content %}wow{% endblock %}"
-file_loader = FileSystemLoader('/home/alfredo.ardito/git-repos/projects/ssg/staticjinja/templates/')
+file_loader = FileSystemLoader(f"{os.getcwd()}/templates")
 env = Environment(loader=file_loader).from_string(mystring)
 data = env.render()
 print(data)
 
 ############################### example 2
 
+import os
 from jinja2 import Environment, FileSystemLoader
 mycontent = 'This is about page'
 mystring = "{% extends '_base.html' %}{% block content %}wow. {{ mycontent }}{% endblock %}"
-file_loader = FileSystemLoader('/home/alfredo.ardito/git-repos/projects/ssg/staticjinja/templates/')
+file_loader = FileSystemLoader(f"{os.getcwd()}/templates")
 env = Environment(loader=file_loader).from_string(mystring)
 data = env.render(mycontent=mycontent)
 print(data)
 
 ############################### example 3
 
+import os
 from jinja2 import Environment, FileSystemLoader
 content = 'This is about page'
-file_loader = FileSystemLoader('/home/alfredo.ardito/git-repos/projects/ssg/staticjinja/templates/')
+file_loader = FileSystemLoader(f"{os.getcwd()}/templates")
 env = Environment(loader=file_loader)
 
 import codecs
@@ -64,9 +67,10 @@ print(output)
 
 ###############################  example 4
 
+import os
 from jinja2 import Environment, FileSystemLoader
 mycontent = 'This is about page'
-file_loader = FileSystemLoader('/home/alfredo.ardito/git-repos/projects/ssg/staticjinja/templates/')
+file_loader = FileSystemLoader(f"{os.getcwd()}/templates")
 env = Environment(loader=file_loader)
 
 import codecs
@@ -110,9 +114,10 @@ print(data)
 
 ############################### example 5
 
+import os
 from jinja2 import Environment, FileSystemLoader
 content = 'This is about page'
-file_loader = FileSystemLoader('/home/alfredo.ardito/git-repos/projects/ssg/staticjinja/templates/')
+file_loader = FileSystemLoader(f"{os.getcwd()}/templates")
 env = Environment(loader=file_loader)
 
 import codecs
@@ -153,9 +158,10 @@ template.stream(sacalamone=f"{content} from sacalamone").dump(str('sacalamone.ht
 
 ###############################  example 6
 
+import os
 from jinja2 import Environment, FileSystemLoader
 mycontent = 'This is about page'
-file_loader = FileSystemLoader('/home/alfredo.ardito/git-repos/projects/ssg/staticjinja/templates/')
+file_loader = FileSystemLoader(f"{os.getcwd()}/templates")
 env = Environment(loader=file_loader)
 
 import codecs
