@@ -193,7 +193,6 @@ env.add_extension(MarkdownExtension)
 
 mystring = "{% extends '_base.html' %}{% block content %}wow. {{ sacalamone }} {% markdown 'ABOUT.md' %} {% endblock %}"
 
-newenv = env.from_string(mystring)
 env.from_string(mystring).stream(sacalamone="this is a test from sacalamone").dump(str('sacalamone.html'), encoding="utf-8")
 
 
