@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+
+{% markdown "ABOUT.md" %}
+
+    <h1>Index</h1>
+    {{ sacalamone }}
+    <p class="important">
+      Welcome to my awesome homepage. checking...::
+    </p>
+    <img src="images/site_0787_0001-750-0-20090924112231.jpg" alt="Trulli" width="400px" height="auto">
+{% endblock %}
+
